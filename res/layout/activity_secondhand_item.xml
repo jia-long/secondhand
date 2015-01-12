@@ -11,8 +11,9 @@
         android:id="@+id/iv_goods_image"
         android:layout_width="100dp"
         android:layout_height="80dp"
-        android:layout_marginEnd="12dp"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        
         android:src="@drawable/xiaomi" />
 
     <LinearLayout
@@ -32,6 +33,7 @@
             android:id="@+id/tv_goods_discription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="5dp"
             android:ellipsize="end"
