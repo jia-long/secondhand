@@ -17,7 +17,7 @@ public class GoodsListAdapter extends BaseAdapter {
 		this.goods = goods;
 		this.context = context;
 	}
-	
+	 
 	@Override
 	public int getCount() {
 		if(goods.size() == 0){
