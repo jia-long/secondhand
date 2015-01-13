@@ -17,6 +17,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -92,6 +93,9 @@ public class GoodsListActivity extends Activity {
 					int position, long id) {
 				Intent intent = new Intent(GoodsListActivity.this, AddGoodsActivity.class);
 				startActivity(intent);
+				
+				/*Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);//调用android自带的照相机 
+				startActivityForResult(intent, 1); */
 
 			}
 
