@@ -1,4 +1,4 @@
-package com.example.secondhand.activity;
+package com.example.secondhand;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,7 +31,7 @@ import android.widget.SimpleAdapter.ViewBinder;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SecondhandListActivity extends Activity {
+public class GoodsListActivity extends Activity {
 	private ListView lv_secondhand_list;
 	private List<Map<String, Object>> items;
 
@@ -45,7 +45,7 @@ public class SecondhandListActivity extends Activity {
 				R.drawable.xiaomi);
 		for (int i = 0; i < 50; i++) {
 			Bitmap[] pics = { pic };
-			Goods g = new Goods(i, "手机_中，一般来说，" + i, "详细sources)形式来表现的。但是有时候我们需要用这个适配器来显示网上的远程图片时，该如何直接显示呢？方法是实现ViewBinder()这个接口，在里面定义数据和视图的匹配关系。代码片段如下：情况一个小项目中需要用到将SD卡中的图片读出后，缩略计算后再simpleAdapter进行显示", i + 100, pics);
+			Goods g = new Goods(i, "手机大甩卖" + i, "现低价出售一部九成新的手机，先来先得，不容错过", i + 100, pics);
 			Map<String, Object> map = new HashMap<String, Object>();
 			map.put("name", g.getName());
 
@@ -90,8 +90,8 @@ public class SecondhandListActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				Toast.makeText(SecondhandListActivity.this, position + "",
-						Toast.LENGTH_SHORT).show();
+				Intent intent = new Intent(GoodsListActivity.this, AddGoodsActivity.class);
+				startActivity(intent);
 
 			}
 

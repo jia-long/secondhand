@@ -46,7 +46,10 @@ public class XCRoundRectImageView extends ImageView{
         Drawable drawable = getDrawable();  
         if (null != drawable) {  
             Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();  
-            Bitmap b = getRoundBitmap(bitmap, 5);  
+            /**
+             * 20 半径
+             */
+            Bitmap b = getRoundBitmap(bitmap, 20);  
             final Rect rectSrc = new Rect(0, 0, b.getWidth(), b.getHeight());  
             final Rect rectDest = new Rect(0,0,getWidth(),getHeight());
             paint.reset();  
@@ -60,7 +63,7 @@ public class XCRoundRectImageView extends ImageView{
     /**
      * 获取圆角矩形图片方法
      * @param bitmap
-     * @param roundPx,一般设置成14
+     * @param roundPx,一般设置成14,图片圆角半径
      * @return Bitmap
      * @author caizhiming
      */
