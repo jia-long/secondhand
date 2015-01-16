@@ -26,6 +26,10 @@
             android:name="com.example.secondhand.AddGoodsActivity"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name=".GoodsDetailActivity"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>

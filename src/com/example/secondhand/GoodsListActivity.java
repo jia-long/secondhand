@@ -21,6 +21,8 @@ import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -35,11 +37,23 @@ import android.widget.Toast;
 public class GoodsListActivity extends Activity {
 	private ListView lv_secondhand_list;
 	private List<Map<String, Object>> items;
+	private ImageView iv_secondhand_header_publish;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_secondhand_list);
+		
+		iv_secondhand_header_publish = (ImageView) findViewById(R.id.iv_secondhand_goodslist_publish_btn);
+		iv_secondhand_header_publish.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(GoodsListActivity.this, AddGoodsActivity.class);
+				startActivity(intent);
+				
+			}
+		});
 		items = new ArrayList<Map<String, Object>>();
 		
 		Bitmap pic = BitmapFactory.decodeResource(getResources(),
@@ -91,7 +105,7 @@ public class GoodsListActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				Intent intent = new Intent(GoodsListActivity.this, AddGoodsActivity.class);
+				Intent intent = new Intent(GoodsListActivity.this, GoodsDetailActivity.class);
 				startActivity(intent);
 				
 				/*Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);//调用android自带的照相机 

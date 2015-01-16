@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,10 +23,14 @@ public class AddGoodsActivity extends Activity implements OnClickListener {
 
 	// 发布按钮
 	private Button b_secondhand_publish;
+	
+	//返回图片按钮
+	private ImageView iv_secondhand_addgoods_back_bnt;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_secondhand_addgoods);
 		init();
 	}
@@ -39,6 +44,7 @@ public class AddGoodsActivity extends Activity implements OnClickListener {
 		iv_upImage2 = (ImageView) findViewById(R.id.iv_secondhand_addgoods_images2);
 		iv_upImage3 = (ImageView) findViewById(R.id.iv_secondhand_addgoods_images3);
 		iv_upImage4 = (ImageView) findViewById(R.id.iv_secondhand_addgoods_images4);
+		iv_secondhand_addgoods_back_bnt = (ImageView) findViewById(R.id.iv_secondhand_addgoods_back_bnt);
 
 		b_secondhand_publish = (Button) findViewById(R.id.b_secondhand_publish);
 		iv_upImage1.setOnClickListener(this);
@@ -46,6 +52,7 @@ public class AddGoodsActivity extends Activity implements OnClickListener {
 		iv_upImage3.setOnClickListener(this);
 		iv_upImage4.setOnClickListener(this);
 		b_secondhand_publish.setOnClickListener(this);
+		iv_secondhand_addgoods_back_bnt.setOnClickListener(this);
 	}
 
 	/**
@@ -68,6 +75,9 @@ public class AddGoodsActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.b_secondhand_publish:
 			addPicture();
+			break;
+		case R.id.iv_secondhand_addgoods_back_bnt:
+			finish();
 			break;
 		}
 
